@@ -64,6 +64,7 @@ public class TAEDriver extends TAEBaseObject {
 
     public void runEdgeDriver(boolean headless) {
         EdgeOptions edgeOptions = new EdgeOptions();
+
         /*if(headless) {
             edgeOptions.setCapability("UseChromium", true);
             edgeOptions.addArguments("headless");
