@@ -3,6 +3,7 @@ package BaseTest;
 import Core.TAEBaseObject;
 import Core.TAEDriver;
 import Entities.WebDriverType;
+import TAExceptions.TAUnknownBrowserException;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -10,13 +11,12 @@ import org.testng.annotations.BeforeClass;
 public abstract class BaseAbstractTest extends TAEBaseObject {
     private static TAEDriver driver;
 
-    public BaseAbstractTest(String browser) {
-        if (browser.equalsIgnoreCase(WebDriverType.CHROME.getDriverName())) {
-            driver = new TAEDriver(WebDriverType.CHROME);
-        } else if (browser.equalsIgnoreCase(WebDriverType.FIREFOX.getDriverName())) {
-            driver = new TAEDriver(WebDriverType.FIREFOX);
-        } else if (browser.equalsIgnoreCase(WebDriverType.EDGE.getDriverName())) {
-            driver = new TAEDriver(WebDriverType.EDGE);
+    public BaseAbstractTest(String browser) throws TAUnknownBrowserException {
+        switch (browser) {
+            case "chrome": driver = new TAEDriver(WebDriverType.CHROME); break;
+            case "firefox": driver = new TAEDriver(WebDriverType.FIREFOX); break;
+            case "edge": driver = new TAEDriver(WebDriverType.EDGE); break;
+            default: throw new TAUnknownBrowserException(String.format("Unknown '%s' browser", browser));
         }
     }
 
