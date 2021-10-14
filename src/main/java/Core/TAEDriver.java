@@ -1,8 +1,10 @@
 package Core;
 
 import Entities.WebDriverType;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -41,6 +43,9 @@ public class TAEDriver extends TAEBaseObject {
         driver.quit();
     }
 
+    public WebElement getElement(By by) {
+        return driver.findElement(by);
+    }
 
     private void configureChromeDriver() {
         System.setProperty("headless", "false");
