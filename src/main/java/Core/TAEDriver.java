@@ -30,6 +30,7 @@ public class TAEDriver extends TAEBaseObject {
         else {
             throw new WebDriverException(String.format("Not configured driver type %s. ", driverType.getDriverName()));
         }
+        driver.manage().window().maximize();
     }
 
     public WebDriver getDriver() {
