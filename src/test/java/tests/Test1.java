@@ -1,8 +1,8 @@
 package tests;
 
 import BaseTest.BaseAbstractChromeTest;
-import BaseTest.BaseAbstractTest;
 import TAExceptions.TAUnknownBrowserException;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
@@ -12,6 +12,7 @@ public class Test1 extends BaseAbstractChromeTest {
 
     @Test
     public void test() {
-        int a = 5+6;
+        getDriver().getDriver().get("https://www.phptravels.net/");
+        Assert.assertTrue(false);
     }
 }

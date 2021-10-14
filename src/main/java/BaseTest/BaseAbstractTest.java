@@ -2,11 +2,15 @@ package BaseTest;
 
 import Core.TAEBaseObject;
 import Core.TAEDriver;
+import Core.TestListener;
 import Entities.WebDriverType;
 import TAExceptions.TAUnknownBrowserException;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
+
+@Listeners(TestListener.class)
 
 public abstract class BaseAbstractTest extends TAEBaseObject {
     private static TAEDriver driver;
