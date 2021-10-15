@@ -47,6 +47,10 @@ public class TAEDriver extends TAEBaseObject {
         return driver.findElement(by);
     }
 
+    public WebElement getElement(String xpath) {
+        return driver.findElement(By.xpath(xpath));
+    }
+
     public void navigateTo(String URL) {
         driver.get(URL);
     }
