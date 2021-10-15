@@ -13,7 +13,7 @@ import org.testng.annotations.Listeners;
 @Listeners(TestListener.class)
 
 public abstract class BaseAbstractTest extends TAEBaseObject {
-    private static TAEDriver driver;
+    private TAEDriver driver;
 
     public BaseAbstractTest(String browser) throws TAUnknownBrowserException {
         switch (browser) {
@@ -45,6 +45,4 @@ public abstract class BaseAbstractTest extends TAEBaseObject {
             driver.quit();
         }
     }
-
-
 }
