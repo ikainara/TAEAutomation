@@ -47,6 +47,10 @@ public class TAEDriver extends TAEBaseObject {
         return driver.findElement(by);
     }
 
+    public void navigateTo(String URL) {
+        driver.get(URL);
+    }
+
     private void configureChromeDriver() {
         System.setProperty("headless", "false");
     }
